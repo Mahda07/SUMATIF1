@@ -27,8 +27,8 @@ const firebaseConfig = {
 const aplikasi = initializeApp(firebaseConfig)
 const basisdata = getFirestore(aplikasi)
 
-export async function ambilPelanggan() {
-  const refDokumen = collection(basisdata, "pelanggan");
+export async function ambilDataPelanggan() {
+  const refDokumen = collection(basisdata, "Pelanggan");
   const kueri = query(refDokumen, orderBy("nama"));
   const cuplikanKueri = await getDocs(kueri);
   
@@ -47,7 +47,7 @@ export async function ambilPelanggan() {
 export async function tambahDataPelanggan(nama,tlpon){
   try {
   // menyimpan data ke firebase
-  const refDokumen = await addDoc(collection(basisdata, "pelanggan"), {
+  const refDokumen = await addDoc(collection(basisdata, "Pelanggan"), {
     nama: nama,
     tlpon: tlpon
   })
