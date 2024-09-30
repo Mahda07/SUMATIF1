@@ -18,8 +18,13 @@
 
   <form class="mb-3">
     <div class=mb-3>
-      <label class="form-label">pelanggan</label>
+      <label class="form-label">nama</label>
       <input type="text" class="form-control" id="inputnama">
+    </div>
+    <div class="mb-3">
+      <label class="from-label">tlpon</label>
+      <input type="text" class="from-control" id="inputtlpon">
+      
     </div>
     <div class=mb-3>
       <button class="btn btn-primary" id="tombolsimpan">simpan</button>
@@ -38,7 +43,7 @@
 
         // ambil data formulir
         let nama = $("#inputnama").val()
-        let nama = $("#inputtlpon").val()
+        let tlpon = $("#inputtlpon").val()
 
         await tambahPelanggan(nama,tlpon)
         window.location.href = "index.html"

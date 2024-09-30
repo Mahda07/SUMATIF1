@@ -29,14 +29,14 @@ const basisdata = getFirestore(aplikasi)
 
 export async function ambilPelanggan() {
   const refDokumen = collection(basisdata, "pelanggan");
-  const kueri = query(refDokumen, orderBy("Nama"));
+  const kueri = query(refDokumen, orderBy("nama"));
   const cuplikanKueri = await getDocs(kueri);
   
   let hasilKueri = []; 
   cuplikanKueri.forEach((dokumen) => {
     hasilKueri.push({
       id: dokumen.id,
-      nama: dokumen.data().nama
+      nama: dokumen.data().nama,
       tlpon: dokumen.data().tlpon
     })
   })
