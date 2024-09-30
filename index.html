@@ -14,11 +14,11 @@
 <body>
   <h1>nama pelanggan</h1>
 
-  <table class="table" id="daftar-bunga">
+  <table class="table" id="daftar-pelanggan">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Nama pelanggan</th>
+        <th scope="col">nama pelanggan</th>
         <th scope="col">no tlpon</th>
         <th scope="col">Aksi</th>
       </tr>
@@ -30,17 +30,17 @@
   <a href="pelanggan.html">tambah pelanggan</a>
   
   <script type="module">
-    import { ambilPelanggan } from './main.js';
+    import { ambilDataPelanggan } from './main.js';
     
     $(document).ready(async function() {
      let elemenPelanggan = $("#daftar-pelanggan > tbody");
-     let namaPelanggan = await ambilPelanggan();
+     let namaPelanggan = await ambilDataPelanggan();
      
      namaPelanggan.forEach((data)=> {
        elemenPelanggan.append(
          "<tr>" +
          "<td>" + "</td>" +
-         "<td>" + data.Nama + "</td>" +
+         "<td>" + data.nama + "</td>" +
          "<td>" + data.tlpon + "</td>" +
          "<td>" + "</td>" +
          "</tr>"

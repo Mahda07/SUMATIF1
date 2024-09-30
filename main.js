@@ -44,12 +44,12 @@ export async function ambilPelanggan() {
   return hasilKueri;
 }
 
-export async function tambahPelanggan(nama,tlpon){
+export async function tambahDataPelanggan(nama,tlpon){
   try {
   // menyimpan data ke firebase
   const refDokumen = await addDoc(collection(basisdata, "pelanggan"), {
     nama: nama,
-    tlpon: tlpon,
+    tlpon: tlpon
   })
   
   // menampilkan pesan berhasil
